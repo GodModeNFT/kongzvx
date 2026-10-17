@@ -38,6 +38,7 @@ details summary::-webkit-details-marker{display:none}
 input[type=file]{width:100%}
 input[type=file]::file-selector-button{background:#5FFE1B;color:#0F0F0C;border:0;border-radius:3px;padding:8px 14px;margin-right:12px;font:inherit;font-weight:600;cursor:pointer}
 button:disabled{cursor:not-allowed}
+.slot-x:hover{color:#5FFE1B !important;background:#1F1F1A !important}
 :focus-visible{outline:2px solid #5FFE1B;outline-offset:2px}
 [hidden]{display:none !important}
 </style>
@@ -146,11 +147,12 @@ button:disabled{cursor:not-allowed}
 <h3 style="margin: 0; font-size: 26px; font-weight: 600">Large Desk Figure</h3>
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #A8A498">7 inches tall · Full Color</p>
 <div style="display: flex; align-items: center; gap: 10px">
-<p style="margin: 0; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.02em"><span id="price7">$120</span></p>
+<p style="margin: 0; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.02em"><span id="price7">$130</span></p>
 <p style="margin: 0; display: flex; flex-direction: column; font-size: 14px; font-weight: 600; line-height: 1.25; color: #BDB9AE"><span>+ Shipping</span><span style="white-space: nowrap">(calculated at checkout)</span></p>
 </div>
 <ul style="margin: 0; padding: 0 0 0 18px; color: #BDB9AE; display: flex; flex-direction: column; gap: 6px">
 <li>Printed in PLA Full Color to match your traits</li>
+<li>Any pose</li>
 <li>Base stand</li>
 <li>Insured shipping</li>
 </ul>
@@ -171,11 +173,12 @@ button:disabled{cursor:not-allowed}
 </div>
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #A8A498">4 inches tall · Full Color</p>
 <div style="display: flex; align-items: center; gap: 10px">
-<p style="margin: 0; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.02em"><span id="price">$60</span></p>
+<p style="margin: 0; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.02em"><span id="price">$70</span></p>
 <p style="margin: 0; display: flex; flex-direction: column; font-size: 14px; font-weight: 600; line-height: 1.25; color: #BDB9AE"><span>+ Shipping</span><span style="white-space: nowrap">(calculated at checkout)</span></p>
 </div>
 <ul style="margin: 0; padding: 0 0 0 18px; color: #BDB9AE; display: flex; flex-direction: column; gap: 6px">
 <li>Printed in PLA Full Color to match your traits</li>
+<li>Any pose</li>
 <li>Base stand</li>
 <li>Insured shipping</li>
 </ul>
@@ -211,6 +214,7 @@ button:disabled{cursor:not-allowed}
 <h2 style="margin: 0; font-weight: 800; font-size: clamp(34px, 4vw, 52px); line-height: 1.02; letter-spacing: -0.03em">Tell us which one.</h2>
 <p style="margin: 0; color: #BDB9AE; max-width: 28em"><a href="https://discord.com/users/1208205545010630768" target="_blank" rel="noopener noreferrer" style="color: #5FFE1B; font-weight: 600">RockstarRev</a> will reach out to you on Discord within 24 hours with a preview render and to collect payment, nothing is charged until you approve. Thank you for your order.</p>
 <p style="margin: 0; max-width: 36em; font-size: 11.5px; line-height: 1.45; color: #A8A498">*Shipping times vary. We start to work on your order as soon as it's placed and ship it out ASAP! <u>Packages that arrive damaged will be replaced with a new print.</u> No Refunds!</p>
+<p style="margin: 0; max-width: 36em; font-size: 11.5px; line-height: 1.45; color: #A8A498">If you can't figure out how to get your .FBX VX files, ask in the CyberKongz Discord server and you will find help.</p>
 </div>
 <div id="order-done" hidden style="background: #0F0F0C; border: 1px solid #5FFE1B; border-radius: 6px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-weight: 800; font-size: 28px; letter-spacing: -0.02em">Order received!</p>
@@ -232,15 +236,7 @@ button:disabled{cursor:not-allowed}
 </div>
 <div id="fbx-slots" style="display: flex; flex-direction: column; gap: 12px"></div>
 <span id="file-msg" aria-live="polite" style="font-size: 14px; color: #FF7A7A"></span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px">
-<label for="size" style="font-size: 15px; font-weight: 600">Print option</label>
-<a href="#options" style="font-size: 14px; color: #5FFE1B; padding: 4px 0">See here</a>
-</div>
-<select id="size" name="print_option" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px">
-<option>Desk Figure</option><option>Large Desk Figure</option><option>Custom Sculpt</option>
-</select>
+<a href="#options" style="align-self: flex-start; font-size: 14px; color: #5FFE1B; padding: 4px 0">See print options</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="email" style="font-size: 15px; font-weight: 600">Email</label>
@@ -258,7 +254,11 @@ button:disabled{cursor:not-allowed}
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
 <label for="ship-street" style="font-size: 14px; color: #BDB9AE">Street</label>
-<input id="ship-street" name="ship_street" type="text" required autocomplete="street-address" placeholder="Street address, apt or unit" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%">
+<input id="ship-street" name="ship_street" type="text" required autocomplete="address-line1" placeholder="Street address" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<label for="ship-street2" style="font-size: 14px; color: #BDB9AE">Apartment, suite, unit <span style="color: #A8A498">(optional)</span></label>
+<input id="ship-street2" name="ship_street2" type="text" autocomplete="address-line2" placeholder="Apt, suite, unit, building" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%">
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 12px">
 <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
@@ -266,18 +266,41 @@ button:disabled{cursor:not-allowed}
 <input id="ship-city" name="ship_city" type="text" required autocomplete="address-level2" placeholder="City" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%">
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
-<label for="ship-zip" style="font-size: 14px; color: #BDB9AE">ZIP</label>
-<input id="ship-zip" name="ship_zip" type="text" required autocomplete="postal-code" placeholder="ZIP / postal code" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%">
+<label for="ship-state" style="font-size: 14px; color: #BDB9AE">State / Province <span style="color: #A8A498">(if your country uses one)</span></label>
+<input id="ship-state" name="ship_state" type="text" autocomplete="address-level1" placeholder="State, province or region" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%">
 </div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<label for="ship-zip" style="font-size: 14px; color: #BDB9AE">ZIP / Postal code <span style="color: #A8A498">(if your country uses one)</span></label>
+<input id="ship-zip" name="ship_zip" type="text" autocomplete="postal-code" placeholder="ZIP / postal code" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%">
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
 <label for="ship-country" style="font-size: 14px; color: #BDB9AE">Country</label>
 <input id="ship-country" name="ship_country" type="text" required autocomplete="country-name" placeholder="Country" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%">
 </div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<label for="phone" style="font-size: 14px; color: #BDB9AE">Phone <span style="color: #A8A498">(optional)</span></label>
+<input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Recommended for international orders" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%">
+</div>
 </fieldset>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<label for="notes" style="font-size: 15px; font-weight: 600">Anything we should know?</label>
-<textarea id="notes" name="notes" rows="3" required placeholder="Pose, colors, accessories…" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; resize: vertical"></textarea>
+<label for="notes" style="font-size: 15px; font-weight: 600">Anything we should know? <span style="font-weight: 400; color: #A8A498">(optional)</span></label>
+<textarea id="notes" name="notes" rows="3" placeholder="Pose, colors, accessories…" style="background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; resize: vertical"></textarea>
+</div>
+<div aria-live="polite" style="border: 1px solid #2C2C26; border-radius: 6px; padding: 16px; background: #15150F; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 15px; font-weight: 600">Order total</p>
+<div id="summary-lines" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px; color: #BDB9AE"></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; border-top: 1px solid #2C2C26; padding-top: 10px; margin-top: 4px">
+<span style="font-weight: 600">Estimated total</span>
+<span style="white-space: nowrap"><span id="summary-total" style="font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; color: #5FFE1B">$70</span><span style="font-size: 14px; font-weight: 600; letter-spacing: 0; color: #BDB9AE"> + shipping</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; font-size: 13.5px; color: #BDB9AE">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px"><span>Genesis Kongz holders (20% off)</span><span style="color: #5FFE1B; font-weight: 600"><span id="total-genesis">$56</span><span style="font-weight: 400; color: #A8A498"> + shipping</span></span></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px"><span>EVO / Babies holders (8% off)</span><span style="color: #5FFE1B; font-weight: 600"><span id="total-evo">$64.40</span><span style="font-weight: 400; color: #A8A498"> + shipping</span></span></div>
+</div>
+<p style="margin: 0; font-size: 12.5px; line-height: 1.45; color: #A8A498">Shipping is calculated at checkout. Holder discounts are applied when we confirm your order.</p>
 </div>
 <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0">
 <button id="submit-btn" type="submit" disabled style="background: #5FFE1B; color: #0F0F0C; border: 0; border-radius: 4px; font-weight: 600; font-size: 17px; padding: 16px 24px; min-height: 52px; cursor: pointer; font-family: inherit; opacity: 0.45">Submit Inquiry</button>
@@ -380,7 +403,7 @@ const ORDER_URL = 'https://script.google.com/macros/s/AKfycbz4c4J-wGT2DTEdCqIteI
   startPoses();
 
   // ---- Desk Figure quantity and price
-  const PRICES = { 1: 60, 2: 110, 3: 165, 4: 210, 5: 240, 10: 450 };
+  const PRICES = { 1: 70, 2: 120, 3: 175, 4: 220, 5: 250, 10: 460 };
   const STEPS = [1, 2, 3, 4, 5, 10];
   let qi = 0;
   function setStepper(decBtn, incBtn, atMin, atMax) {
@@ -398,7 +421,7 @@ const ORDER_URL = 'https://script.google.com/macros/s/AKfycbz4c4J-wGT2DTEdCqIteI
   renderQty();
 
   // ---- 7-inch Desk Figure quantity and price
-  const PRICES7 = { 1: 120, 2: 220, 3: 320, 4: 400 };
+  const PRICES7 = { 1: 130, 2: 230, 3: 330, 4: 410 };
   let q7 = 1;
   function renderQty7() {
     $('qty7').textContent = q7;
@@ -420,27 +443,61 @@ const ORDER_URL = 'https://script.google.com/macros/s/AKfycbz4c4J-wGT2DTEdCqIteI
   const status = $('form-status');
   const FIELD_STYLE = 'background: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 52px';
 
-  function addSlot(n) {
+  const PRINT_OPTIONS = ['Desk Figure', 'Large Desk Figure', 'Custom Sculpt'];
+  function mkLabel(forId, text) {
+    const l = document.createElement('label');
+    l.htmlFor = forId; l.textContent = text;
+    l.style.cssText = 'font-size: 14px; color: #BDB9AE';
+    return l;
+  }
+  function addSlot() {
     const wrap = document.createElement('div');
-    wrap.style.cssText = 'display: flex; flex-direction: column; gap: 6px';
-    const label = document.createElement('label');
-    label.htmlFor = 'fbx-' + n;
-    label.textContent = 'Kong #' + n + ' FBX file';
-    label.style.cssText = 'font-size: 14px; color: #BDB9AE';
+    wrap.className = 'kong-slot';
+    wrap.style.cssText = 'position: relative; border: 1px solid #2C2C26; border-radius: 6px; padding: 16px; background: #15150F; display: flex; flex-direction: column; gap: 8px';
+    const x = document.createElement('button');
+    x.type = 'button'; x.className = 'slot-x';
+    x.style.cssText = 'position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: 0; border-radius: 4px; color: #BDB9AE; cursor: pointer';
+    x.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>';
+    x.addEventListener('click', () => { wrap.remove(); refreshSlots(); });
+    const fileLabel = mkLabel('', ''); fileLabel.className = 'lbl-fbx';
+    fileLabel.style.paddingRight = '40px';
     const input = document.createElement('input');
-    input.type = 'file'; input.id = 'fbx-' + n; input.required = true;
+    input.type = 'file'; input.required = true;
     if (!IS_IOS) input.accept = '.fbx';
     input.className = 'fbx-input';
     input.style.cssText = FIELD_STYLE;
-    wrap.appendChild(label); wrap.appendChild(input);
+    const printLabel = mkLabel('', ''); printLabel.className = 'lbl-print';
+    printLabel.style.marginTop = '6px';
+    const sel = document.createElement('select');
+    sel.className = 'print-select';
+    sel.style.cssText = 'background-color: #0F0F0C; color: #EDEAE2; border: 1px solid #4A4A42; border-radius: 4px; padding: 14px 16px; box-sizing: border-box; min-height: 48px; width: 100%';
+    PRINT_OPTIONS.forEach((t) => { const op = document.createElement('option'); op.textContent = t; sel.appendChild(op); });
+    wrap.append(x, fileLabel, input, printLabel, sel);
     slotsBox.appendChild(wrap);
   }
-  function setSlots(n) {
-    while (slotsBox.children.length < n) addSlot(slotsBox.children.length + 1);
-    while (slotsBox.children.length > n) slotsBox.lastElementChild.remove();
+  // Number the boxes Kong #1, #2, … in order (also after one is removed)
+  function refreshSlots() {
+    const boxes = Array.from(slotsBox.children);
+    const n = boxes.length;
+    boxes.forEach((box, i) => {
+      const k = i + 1;
+      box.querySelector('.fbx-input').id = 'fbx-' + k;
+      box.querySelector('.print-select').id = 'print-' + k;
+      const fl = box.querySelector('.lbl-fbx'); fl.htmlFor = 'fbx-' + k; fl.textContent = 'Kong #' + k + ' FBX file';
+      const pl = box.querySelector('.lbl-print'); pl.htmlFor = 'print-' + k; pl.textContent = 'Kong #' + k + ' print option';
+      const x = box.querySelector('.slot-x');
+      x.setAttribute('aria-label', 'Remove Kong #' + k);
+      x.hidden = n <= 1;
+    });
     $('fq').textContent = n;
     setStepper($('fq-dec'), $('fq-inc'), n <= 1, n >= MAX_KONGZ);
     checkReady();
+    if (typeof renderTotal === 'function') renderTotal();
+  }
+  function setSlots(n) {
+    while (slotsBox.children.length < n) addSlot();
+    while (slotsBox.children.length > n) slotsBox.lastElementChild.remove();
+    refreshSlots();
   }
   $('fq-dec').addEventListener('click', () => setSlots(slotsBox.children.length - 1));
   $('fq-inc').addEventListener('click', () => setSlots(slotsBox.children.length + 1));
@@ -451,7 +508,7 @@ const ORDER_URL = 'https://script.google.com/macros/s/AKfycbz4c4J-wGT2DTEdCqIteI
     return '';
   }
 
-  const TEXT_FIELDS = ['email', 'discord', 'ship-name', 'ship-street', 'ship-city', 'ship-zip', 'ship-country', 'notes'];
+  const TEXT_FIELDS = ['email', 'discord', 'ship-name', 'ship-street', 'ship-city', 'ship-country'];
   function checkReady() {
     let msg = '';
     const filesOk = Array.from(slotsBox.querySelectorAll('.fbx-input')).every((inp) => {
@@ -469,6 +526,45 @@ const ORDER_URL = 'https://script.google.com/macros/s/AKfycbz4c4J-wGT2DTEdCqIteI
     submitBtn.style.opacity = ready ? '1' : '0.45';
     return ready;
   }
+
+  // ---- Order total, priced from the Print options cards
+  const TIERS = { 'Desk Figure': PRICES, 'Large Desk Figure': PRICES7 };
+  function orderEstimate() {
+    const counts = {};
+    slotsBox.querySelectorAll('.print-select').forEach((sel) => { counts[sel.value] = (counts[sel.value] || 0) + 1; });
+    let sum = 0, quote = false;
+    const lines = [];
+    ['Desk Figure', 'Large Desk Figure', 'Custom Sculpt'].forEach((name) => {
+      const n = counts[name];
+      if (!n) return;
+      const p = TIERS[name] && TIERS[name][n];
+      if (p) sum += p; else quote = true;
+      lines.push({ text: name + ' × ' + n, price: p ? '$' + p : 'Quote' });
+    });
+    let total;
+    if (!quote) total = '$' + sum;
+    else if (sum) total = '$' + sum + ' + quote';
+    else total = 'Quote';
+    const money = (v) => '$' + (Number.isInteger(v) ? v : v.toFixed(2));
+    const withDiscount = (pct) => !sum ? 'Quote' : money(Math.round(sum * (100 - pct)) / 100) + (quote ? ' + quote' : '');
+    return { lines: lines, total: total, genesis: withDiscount(20), evo: withDiscount(8) };
+  }
+  function renderTotal() {
+    const est = orderEstimate();
+    const box = $('summary-lines');
+    box.textContent = '';
+    est.lines.forEach((l) => {
+      const row = document.createElement('div');
+      row.style.cssText = 'display: flex; justify-content: space-between; gap: 12px';
+      const a = document.createElement('span'); a.textContent = l.text;
+      const b = document.createElement('span'); b.textContent = l.price; b.style.color = '#EDEAE2';
+      row.append(a, b); box.appendChild(row);
+    });
+    $('summary-total').textContent = est.total;
+    $('total-genesis').textContent = est.genesis;
+    $('total-evo').textContent = est.evo;
+  }
+  form.addEventListener('change', renderTotal);
   form.addEventListener('input', checkReady);
   form.addEventListener('change', checkReady);
   setSlots(1);
@@ -495,13 +591,13 @@ const ORDER_URL = 'https://script.google.com/macros/s/AKfycbz4c4J-wGT2DTEdCqIteI
     status.textContent = 'Uploading your files. This can take a moment, please keep this page open.';
     try {
       const inputs = Array.from(slotsBox.querySelectorAll('.fbx-input'));
-      const files = await Promise.all(inputs.map(async (inp) => {
+      const files = await Promise.all(inputs.map(async (inp, k) => {
         const f = inp.files[0];
-        return { name: f.name, data: await readBase64(f) };
+        return { name: f.name, option: $('print-' + (k + 1)).value, data: await readBase64(f) };
       }));
       const payload = {
         website: form.elements.website.value,
-        print_option: $('size').value,
+        print_option: Array.from(slotsBox.querySelectorAll('.print-select')).map((sel, k) => 'Kong #' + (k + 1) + ': ' + sel.value).join('\n'),
         email: $('email').value.trim(),
         discord: $('discord').value.trim(),
         ship_name: $('ship-name').value.trim(),
@@ -509,6 +605,10 @@ const ORDER_URL = 'https://script.google.com/macros/s/AKfycbz4c4J-wGT2DTEdCqIteI
         ship_city: $('ship-city').value.trim(),
         ship_zip: $('ship-zip').value.trim(),
         ship_country: $('ship-country').value.trim(),
+        ship_street2: $('ship-street2').value.trim(),
+        ship_state: $('ship-state').value.trim(),
+        phone: $('phone').value.trim(),
+        estimate: (() => { const e = orderEstimate(); return e.lines.map((l) => l.text + ': ' + l.price).join('\n') + '\nEstimated total: ' + e.total + ' (before holder discounts and shipping)' + '\nGenesis Kongz holder price (20% off): ' + e.genesis + '\nEVO / Babies holder price (8% off): ' + e.evo; })(),
         notes: $('notes').value.trim(),
         files: files
       };
